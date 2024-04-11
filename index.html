@@ -12,23 +12,37 @@
         <!-- Current page content -->
         <div class="flex-1 overflow-y-auto no-scrollbar">
             <!-- Tab Switcher -->
-            <div class="flex items-center p-4 mt-2 text-zinc-400 gap-4 text-xl">
-                <!-- Selected tab -->
-                <div class="text-white font-bold underline underline-offset-[5px] decoration-2 cursor-pointer">
-                    Receitas
-                </div> 
-                <!-- Unselected tab -->
-                <div class="cursor-pointer hover:text-white duration-150">
-                    Categorias
+            <div class="flex w-full p-4 mt-2 items-center justify-between">
+                <div class="flex items-center text-zinc-400 gap-4 text-xl">
+                    <!-- Selected tab - Receitas -->
+                    <div class="text-white font-bold underline underline-offset-[5px] decoration-2 cursor-pointer">
+                        Receitas
+                    </div> 
+                    <!-- Unselected tab - Grupos -->
+                    <div class="cursor-pointer hover:text-white duration-150">
+                        Grupos
+                    </div>
+                </div>
+                 <!-- Unselected tab - Search -->
+                <div 
+                    class="cursor-pointer text-zinc-400 hover:text-white duration-150"
+                    onclick="window.location.href='search.html'"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>                      
                 </div>
             </div>
 
             <!-- Page content -->
-            <div class="p-4 mb-32">
+            <div class="px-4 mb-32">
                 <!-- Recipe card -->
                 <!-- Big image, title at the bottom -->
-                <div class="bg-zinc-800 rounded-xl shadow-lg">
-                    <img src="https://www.receitasdeculinaria.tv/wp-content/uploads/2023/07/bolo-de-cenoura-com-chocolate.jpg" alt="Recipe image" class="w-full h-48 object-cover rounded-t-xl">
+                <div 
+                    class="bg-zinc-800 rounded-xl shadow-lg mt-4 cursor-pointer hover:bg-zinc-700 duration-150"
+                    onclick="window.location.href = 'recipe/bolo-cenoura/index.html'"
+                >
+                    <img src="https://i.pinimg.com/736x/2b/0b/73/2b0b73f42ef0ec6d0cc06392bff2f543.jpg" alt="Recipe image" class="w-full h-48 object-cover rounded-t-xl">
                     <div class="p-4">
                         <div class="text-xl font-bold text-white">
                             Receita de Bolo de Cenoura
@@ -38,7 +52,7 @@
 
                 <!-- Recipe card -->
                 <!-- Small image, title at the bottom -->
-                <div class="bg-zinc-800 rounded-xl shadow-lg mt-4">
+                <div class="bg-zinc-800 rounded-xl shadow-lg mt-4 cursor-pointer hover:bg-zinc-700 duration-150">
                     <img src="https://img.cybercook.com.br/imagens/receitas/518/como-fazer-pure-de-batata-1.jpg" alt="Recipe image" class="w-full h-32 object-cover rounded-t-xl">
                     <div class="p-4">
                         <div class="text-xl font-bold text-white">
@@ -49,7 +63,7 @@
 
                 <!-- Recipe card -->
                 <!-- Big image, title at the bottom -->
-                <div class="bg-zinc-800 rounded-xl shadow-lg mt-4">
+                <div class="bg-zinc-800 rounded-xl shadow-lg mt-4 cursor-pointer hover:bg-zinc-700 duration-150">
                     <img src="https://www.luismiguelcosta.pt/wp-content/uploads/2023/11/receita-bacalhau-a%CC%80-bra%CC%81s-3-800x530.jpg" alt="Recipe image" class="w-full h-48 object-cover rounded-t-xl">
                     <div class="p-4">
                         <div class="text-xl font-bold text-white">
@@ -60,7 +74,7 @@
 
                 <!-- Recipe card -->
                 <!-- Big image, title at the bottom -->
-                <div class="bg-zinc-800 rounded-xl shadow-lg mt-4">
+                <div class="bg-zinc-800 rounded-xl shadow-lg mt-4 cursor-pointer hover:bg-zinc-700 duration-150">
                     <img src="https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/101C5A5D-C290-4A58-B372-A0100BC48778/Derivates/1FAC3616-88EB-4B3F-B68A-7B0CB5DAF2C9.jpg" alt="Recipe image" class="w-full h-48 object-cover rounded-t-xl">
                     <div class="p-4">
                         <div class="text-xl font-bold text-white">
@@ -82,12 +96,12 @@
                 Início
             </div>
 
-            <!-- Bookmarks Button -->
+            <!-- Cart Button -->
             <div class="text-white cursor-pointer hover:text-zinc-300 duration-150 flex flex-col items-center justify-center text-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
                 </svg>
-                Salvo              
+                Carrinho                             
             </div>
 
             <!-- Calendar Button -->
@@ -98,12 +112,12 @@
                 Calendário      
             </div>
 
-            <!-- Cart Button -->
+            <!-- Profile Button -->
             <div class="text-white cursor-pointer hover:text-zinc-300 duration-150 flex flex-col items-center justify-center text-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                </svg>
-                Carrinho                             
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                  </svg>                  
+                Pessoal      
             </div>
         </div>
     </div>
