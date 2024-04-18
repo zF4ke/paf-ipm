@@ -26,7 +26,7 @@ function addRecipe(recipe) {
                 ${recipe.name}
             </div>
             <p class="text-sm text-white mt-1">
-                ${recipe.description.length > 35 ? recipe.description.substring(0, 35) + '...' : recipe.description}
+                ${recipe.description.length > 45 ? recipe.description.substring(0, 45) + '...' : recipe.description}
             </p>
         </div>
     </div>`
