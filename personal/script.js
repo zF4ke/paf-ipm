@@ -25,9 +25,7 @@ function addRecipe(recipe) {
             <div class="text-md font-bold text-white">
                 ${recipe.name}
             </div>
-            <p class="text-sm text-white mt-1">
-                ${recipe.description.length > 45 ? recipe.description.substring(0, 45) + '...' : recipe.description}
-            </p>
+          
         </div>
     </div>`
     const recipesElem = document.querySelector('#recipes-elem');
