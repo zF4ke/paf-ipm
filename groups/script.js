@@ -5,10 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const groups = JSON.parse(localStorage.getItem('groups')) || [];
 
-    console.log(groups);
-
-    console.log(groups.length);
-
     if (groups.length > 0) {
         groups.forEach(group => {
             addGroup(group);

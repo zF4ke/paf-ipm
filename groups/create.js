@@ -4,8 +4,8 @@ const createGroupButton = document.querySelector('#create-group-button');
 const createGroupError = document.querySelector('#create-group-error');
 
 createGroupButton.addEventListener('click', function() {
-    const name = createGroupName.value;
-    const description = createGroupDescription.value;
+    let name = createGroupName.value;
+    let description = createGroupDescription.value;
 
     if (name.length < 3) {
         //alert('O nome do grupo deve ter pelo menos 3 caracteres.');
@@ -13,10 +13,13 @@ createGroupButton.addEventListener('click', function() {
         return;
     }
 
-    if (description.length < 3) {
+    /* if (description.length < 3) {
         //alert('A descrição do grupo deve ter pelo menos 3 caracteres.');
         createGroupError.innerHTML = 'A descrição do grupo deve ter pelo menos 3 caracteres.';
         return;
+    } */
+    if (!description) {
+        description = 'Sem descrição';
     }
 
     const groups = JSON.parse(localStorage.getItem('groups')) || [];

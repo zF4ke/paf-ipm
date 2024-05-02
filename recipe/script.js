@@ -69,6 +69,8 @@ function unsaveRecipe(recipeName) {
 }
 
 function addToCart() {
+    if (!confirm('Quer adicionar ao carrinho?')) return;
+
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     let item = {
@@ -112,12 +114,26 @@ function addToCart() {
         ]
     };
 
-    if (!cart.find(cartItem => cartItem.name === item.name))
+    if (!cart.find(cartItem => cartItem.name === item.name)) {
         cart.push(item);
-
+    } else {
+        cart.map(cartItem => {
+            if (cartItem.name === item.name) {
+                cartItem.ingredients.map(ingredient => {
+                    const newIngredient = item.ingredients.find(newIngredient => newIngredient.name === ingredient.name);
+                    if (newIngredient) {
+                        ingredient.quantity = (parseInt(ingredient.quantity) + parseInt(newIngredient.quantity)).toString();
+                    }
+                });
+            }
+        });
+    }
+    
     localStorage.setItem('cart', JSON.stringify(cart));
 
     console.log(cart);
 
-    window.location.href = '../../cart/index.html';
+    alert('Receita adicionada ao carrinho!');
+
+    //if (go) window.location.href = '../../cart/index.html';
 }
