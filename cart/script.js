@@ -3,21 +3,39 @@ clearCartButton.addEventListener('click', askForConfirmation);
 
 const totalPriceElement = document.querySelector('#total-price-value');
 
+const successModal2 = document.getElementById('success-modal-2');
 const confirmModal = document.getElementById('confirm-modal');
 const successModal = document.getElementById('success-modal');
 const confirmButton = document.getElementById('confirm-button');
 const cancelButton = document.getElementById('cancel-button');
 const closeButton = document.getElementById('close-button');
+const buyButton = document.getElementById('cart-button');
+const closeButton2 = document.getElementById('close-button-2');
 
 clearCartButton.addEventListener('click', askForConfirmation);
 
-confirmButton.addEventListener('click', clearCart);
+buyButton.addEventListener('click', function() {
+    successModal2.style.display = 'block';
+    localStorage.removeItem('cart');
+});
+
+confirmButton.addEventListener('click', function() {
+    clearCart();
+
+    confirmModal.style.display = 'none';
+    successModal.style.display = 'block';
+});
 cancelButton.addEventListener('click', function() {
     confirmModal.style.display = 'none';
 });
 
 closeButton.addEventListener('click', function() {
     successModal.style.display = 'none';
+});
+
+closeButton2.addEventListener('click', function() {
+    successModal2.style.display = 'none';
+    clearCart(); 
 });
 
 // on page load
@@ -101,7 +119,4 @@ function clearCart() {
     document.querySelector('#cart-items').innerHTML = '<p class="text-white">O carrinho está vazio</p>';
     document.querySelector('#cart-buttons').style.display = 'none';
     document.querySelector('#total-price').style.display = 'none';
-
-    confirmModal.style.display = 'none';
-    successModal.style.display = 'block';
 }
