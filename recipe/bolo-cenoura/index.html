@@ -35,6 +35,35 @@
                     </p>
                 </div>
 
+                <!-- Confirm modal -->
+                <div id="confirm-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+                    <div class="flex items
+                    -center justify-center h-screen">
+                        <div class="bg-zinc-800 p-4 rounded-lg m-auto mx-4">
+                            <p class="text-white
+                            text-center">Tem a certeza que deseja adicionar esta receita ao carrinho?</p>
+                            <div class="flex justify-center mt-4 gap-4">
+                                <button id="cancel-button" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 duration-150">Não</button>
+                                <button id="confirm-button" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 duration-150">Sim</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Success modal -->
+                <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+                    <div class="flex items
+                    -center justify-center h-screen">
+                        <div class="bg-zinc-800 p-4 rounded-lg m-auto mx-4">
+                            <p class="text-white
+                            text-center">Receita adicionada ao carrinho com sucesso!</p>
+                            <div class="flex justify-center mt-4 gap-4">
+                                <button id="close-button" class="bg-zinc-600 text-white px-4 py-2 rounded-lg hover:bg-zinc-700 duration-150">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Ingredients -->
                 <div class="p-4 bg-zinc-800">
                     <p class="text-2xl font-bold text-white">
@@ -66,10 +95,9 @@
                 </div>
 
                 <div class="mb-32"></div>
-
                 <!-- Buttons -->
                 <div class="flex bg-zinc-800 items-center fixed bottom-16 w-screen h-16">
-                    <div class="flex gap-4 ml-4">
+                    <div class="flex gap-4 ml-4 sm:text-base text-sm">
                         <button class="flex items-center justify-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-600 duration-150">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" />

@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function addGroup(group) {
     // replace breaks with spaces
     let htmlCode = `<div 
+        onclick="window.location.href = 'message.html';"
         class="flex flex-col gap-2 justify-center h-22 bg-zinc-800 rounded-xl shadow-lg cursor-pointer hover:bg-zinc-700 duration-150 hover:bg-opacity-80 active:bg-opacity-100">
         <div class="flex justify-between items-center p-4">
             <div>

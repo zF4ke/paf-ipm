@@ -56,6 +56,35 @@
                         </button>
                     </div>
                 </div>
+
+                <!-- Confirm modal -->
+                <div id="confirm-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+                    <div class="flex items
+                    -center justify-center h-screen">
+                        <div class="bg-zinc-800 p-4 rounded-lg m-auto mx-4">
+                            <p class="text-white
+                            text-center">Tem a certeza que deseja limpar o carrinho?</p>
+                            <div class="flex justify-center mt-4 gap-4">
+                                <button id="cancel-button" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 duration-150">Não</button>
+                                <button id="confirm-button" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 duration-150">Sim</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Success modal -->
+                <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+                    <div class="flex items
+                    -center justify-center h-screen">
+                        <div class="bg-zinc-800 p-4 rounded-lg m-auto mx-4">
+                            <p class="text-white
+                            text-center">Carrinho limpo com sucesso!</p>
+                            <div class="flex justify-center mt-4 gap-4">
+                                <button id="close-button" class="bg-zinc-600 text-white px-4 py-2 rounded-lg hover:bg-zinc-700 duration-150">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
             

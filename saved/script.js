@@ -25,7 +25,9 @@ function addRecipe(recipe) {
             <div class="text-md font-bold text-white">
                 ${recipe.name}
             </div>
-          
+            <div class="text-sm text-zinc-400">
+                ${recipe.description.slice(0, 25)}...
+            </div>
         </div>
     </div>`
     const recipesElem = document.querySelector('#recipes-elem');

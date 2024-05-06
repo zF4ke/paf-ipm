@@ -1,7 +1,24 @@
 const clearCartButton = document.querySelector('#clear-cart');
-clearCartButton.addEventListener('click', clearCart);
+clearCartButton.addEventListener('click', askForConfirmation);
 
 const totalPriceElement = document.querySelector('#total-price-value');
+
+const confirmModal = document.getElementById('confirm-modal');
+const successModal = document.getElementById('success-modal');
+const confirmButton = document.getElementById('confirm-button');
+const cancelButton = document.getElementById('cancel-button');
+const closeButton = document.getElementById('close-button');
+
+clearCartButton.addEventListener('click', askForConfirmation);
+
+confirmButton.addEventListener('click', clearCart);
+cancelButton.addEventListener('click', function() {
+    confirmModal.style.display = 'none';
+});
+
+closeButton.addEventListener('click', function() {
+    successModal.style.display = 'none';
+});
 
 // on page load
 document.addEventListener('DOMContentLoaded', function() {
@@ -75,12 +92,16 @@ function addCartItem(item) {
     cartItemsDiv.innerHTML += htmlCode;
 }
 
-function clearCart() {
-    if(!confirm('Tem a certeza que deseja limpar o carrinho?')) return;
-    
+function askForConfirmation() {
+    confirmModal.style.display = 'block';
+}
 
+function clearCart() {
     localStorage.removeItem('cart');
     document.querySelector('#cart-items').innerHTML = '<p class="text-white">O carrinho está vazio</p>';
     document.querySelector('#cart-buttons').style.display = 'none';
     document.querySelector('#total-price').style.display = 'none';
+
+    confirmModal.style.display = 'none';
+    successModal.style.display = 'block';
 }

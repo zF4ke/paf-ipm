@@ -2,8 +2,23 @@
 const saveButton = document.querySelector('#save-button');
 const cartButton = document.querySelector('#cart-button');
 
+const confirmModal = document.getElementById('confirm-modal');
+const successModal = document.getElementById('success-modal');
+const confirmButton = document.getElementById('confirm-button');
+const cancelButton = document.getElementById('cancel-button');
+const closeButton = document.getElementById('close-button');
+
 saveButton.addEventListener('click', toggleSaveButton);
-cartButton.addEventListener('click', addToCart);
+cartButton.addEventListener('click', askForConfirmation);
+
+confirmButton.addEventListener('click', addToCart);
+cancelButton.addEventListener('click', function() {
+    confirmModal.style.display = 'none';
+});
+
+closeButton.addEventListener('click', function() {
+    successModal.style.display = 'none';
+});
 
 // on page load check if recipe is saved and change button color
 document.addEventListener('DOMContentLoaded', function() {
@@ -68,8 +83,12 @@ function unsaveRecipe(recipeName) {
     localStorage.setItem('recipes', JSON.stringify(recipes));
 }
 
+function askForConfirmation() {
+    confirmModal.style.display = 'block';
+}
+
 function addToCart() {
-    if (!confirm('Quer adicionar ao carrinho?')) return;
+    //if (!confirm('Quer adicionar ao carrinho?')) return;
 
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -133,7 +152,10 @@ function addToCart() {
 
     console.log(cart);
 
-    alert('Receita adicionada ao carrinho!');
+    //alert('Receita adicionada ao carrinho!');
+
+    confirmModal.style.display = 'none';
+    successModal.style.display = 'block';
 
     //if (go) window.location.href = '../../cart/index.html';
 }
