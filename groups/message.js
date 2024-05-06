@@ -4,6 +4,13 @@ const groupOptionsOpenButton = document.querySelector('#group-options-open-butto
 const groupOptionsShareButton = document.querySelector('#group-options-share-button');
 const groupOptionsLeaveButton = document.querySelector('#group-options-leave-button');
 
+const successModal = document.getElementById('success-modal');
+const successModalCloseButton = document.getElementById('close-button');
+
+successModalCloseButton.addEventListener('click', function() {
+    successModal.classList.add('hidden');
+});
+
 groupOptionsOpenButton.addEventListener('click', function() {
     groupOptionsModal.classList.remove('hidden');
 });
@@ -21,7 +28,7 @@ groupOptionsLeaveButton.addEventListener('click', function() {
 
 groupOptionsShareButton.addEventListener('click', function() {
     groupOptionsModal.classList.add('hidden');
-    alert('Link do grupo copiado para a área de transferência!');
+    successModal.classList.remove('hidden');
 
     // copy to clipboard
     navigator.clipboard.writeText("https://www.google.com/");
