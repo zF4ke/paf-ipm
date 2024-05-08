@@ -8,7 +8,17 @@ const confirmButton = document.getElementById('confirm-button');
 const cancelButton = document.getElementById('cancel-button');
 const closeButton = document.getElementById('close-button');
 
-saveButton.addEventListener('click', toggleSaveButton);
+const successModal2 = document.getElementById('success-modal2');
+const closeButton2 = document.getElementById('close-button2');
+
+closeButton2.addEventListener('click', function() {
+    successModal2.style.display = 'none';
+});
+
+saveButton.addEventListener('click', function() {
+    toggleSaveButton();
+});
+
 cartButton.addEventListener('click', askForConfirmation);
 
 confirmButton.addEventListener('click', addToCart);
@@ -46,6 +56,7 @@ function toggleSaveButton() {
     } else {
         svg.style.fill = 'white';
         createRecipe();
+        successModal2.style.display = 'block';
     }
 
     // print favourites recipes
